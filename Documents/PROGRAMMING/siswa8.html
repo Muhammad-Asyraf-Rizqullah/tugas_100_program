@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penghitung Siswa Kelas 8</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745; /* Warna hijau */
+            color: white;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #hasilTotalSiswa {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Total Siswa Kelas 8</h1>
+    <p>Program ini akan menghitung total siswa Kelas 8, dengan asumsi ada 13 kelas dan setiap kelas memiliki 25 siswa.</p>
+    
+    <button onclick="hitungTotalSiswaKelas8()">Hitung Total Siswa Kelas 8</button>
+    
+    <div id="hasilTotalSiswa"></div>
+
+    <script src="siswa8.js"></script>
+</body>
+</html>

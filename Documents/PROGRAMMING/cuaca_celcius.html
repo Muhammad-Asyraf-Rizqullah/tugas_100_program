@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const suhuInput = prompt("Masukkan Suhu Saat Ini (°C): ");
+        const suhu = parseFloat(suhuInput);
+            
+        if (!isNaN(suhu)) {
+            if (suhu >= 30) {
+                console.log("Cuaca Panas.");
+            } else if (suhu >= 20) {
+                console.log("Cuaca Hangat.");
+            } else if (suhu >= 10) {
+                console.log("Cuaca Dingin.");
+            } else {
+                console.log("Cuaca Sangat Dingin.");
+            }
+        } else {
+            console.log("Input tidak valid. Harap masukkan angka.");
+        }
+    </script>
+</body>
+</html>

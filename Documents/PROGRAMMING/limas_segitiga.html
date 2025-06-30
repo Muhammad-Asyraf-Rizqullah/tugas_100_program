@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumus Limas Segitiga</title>
+</head>
+<body>
+    <script>
+        console.log("====================");
+        console.log("Rumus Limas Segitiga");
+        console.log("====================");
+
+        const a = 10;
+        const ts = 8;
+        const tl = 12;
+        const s1 = 6;
+        const s2 = 7;
+        const s3 = 8;
+
+        console.log("Alas: " + a);
+        console.log("Tinggi Segitiga: " + ts);
+        console.log("Tinggi Limas: " + tl);
+        console.log("Sisi 1: " + s1);
+        console.log("Sisi 2: " + s2);
+        console.log("Sisi 3: " + s3);
+
+        const la = 0.5 * a * ts;
+        const ls1 = 0.5 * a * s1;
+        const ls2 = 0.5 * a * s2;
+        const ls3 = 0.5 * a * s3;
+
+        const lp = la + ls1 + ls2 + ls3;
+        const v = (1 / 3) * la * tl;
+
+        console.log("Luas Permukaan: " + lp);
+        console.log("Volume: " + v.toFixed(2));
+    </script>
+</body>
+</html>

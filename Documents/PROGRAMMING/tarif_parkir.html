@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const jamParkirInput = prompt("Berapa Jam Anda Parkir?: ");
+        const jamParkir = parseInt(jamParkirInput);
+            
+        console.log("=".repeat(40));
+            
+        let tarif;
+        if (jamParkir <= 1) {
+            tarif = 5000;
+        } else {
+            tarif = 5000 + (jamParkir - 1) * 3000;
+        }
+        
+        console.log(`Tarif Parkir Yang Harus Dibayar: Rp ${tarif}`);
+    </script>
+</body>
+</html>

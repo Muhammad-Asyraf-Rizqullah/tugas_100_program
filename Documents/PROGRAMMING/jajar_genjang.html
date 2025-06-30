@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jajar Genjang</title>
+</head>
+<body>
+    <div class="input">
+        <div>
+            <label for="alas">Inputkan Alas: </label>
+            <input type="number" name="" id="alas">
+        </div>
+        <div>
+            <label for="tinggi">Inputkan Tinggi: </label>
+            <input type="number" name="" id="tinggi">
+        </div>
+        <div>
+            <label for="sm">Inputkan Sisi Miring: </label>
+            <input type="number" name="" id="sm">
+        </div>
+    </div>
+    <div class="btn">
+        <button id="btnHitung" type="button">Hitung</button>
+    </div>
+    <div class="output">
+        <p>
+            Luas: <span id="luas"></span>
+        </p>
+        <p>
+            Keliling: <span id="keliling"></span>
+        </p>
+    </div>
+    <script>
+        const alas = document.getElementById("alas")
+        const tinggi = document.getElementById("tinggi")
+        const sm = document.getElementById("sm")
+        const btnHitung = document.getElementById("btnHitung")
+        const luas = document.getElementById("luas")
+        const keliling = document.getElementById("keliling")
+
+        btnHitung.addEventListener('click', function(){
+            const jmlhLuas = parseFloat(alas.value) * parseFloat(tinggi.value);
+            luas.innerHTML = jmlhLuas
+
+            const jmlhK = 2 * (parseFloat(alas.value) + parseFloat(sm.value));
+            keliling.innerHTML = jmlhK
+        })
+    </script>
+</body>
+</html>

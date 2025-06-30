@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energi Mekanik</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input {
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Perhitungan Energi Mekanik</h1>
+    <input type="number" id="mass" placeholder="Masukkan massa (kg)">
+    <input type="number" id="height" placeholder="Masukkan ketinggian (m)">
+    <input type="number" id="velocity" placeholder="Masukkan kecepatan (m/s)">
+    <button onclick="calculateEnergy()">Hitung</button>
+
+    <p>Energi Potensial: <span id="potentialEnergy"></span> Joule</p>
+    <p>Energi Kinetik: <span id="kineticEnergy"></span> Joule</p>
+    <p>Energi Mekanik: <span id="mechanicalEnergy"></span> Joule</p>
+
+    <script src="energi_mekanik.js"></script>
+</body>
+</html>

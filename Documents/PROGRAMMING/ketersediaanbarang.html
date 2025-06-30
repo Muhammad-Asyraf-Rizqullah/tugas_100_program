@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Ketersediaan Barang</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      color: #333;
+    }
+    input, select, button {
+      margin: 5px 0;
+      padding: 8px;
+      width: 100%;
+      max-width: 300px;
+    }
+    #hasil {
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      padding: 15px;
+      border-left: 4px solid #007BFF;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📋 Menentukan Barang Tersedia</h2>
+  <hr>
+
+  <label>Masukkan Nama Barang:</label><br>
+  <input type="text" id="namaBarang"><br>
+
+  <label>Masukkan Jumlah Barang:</label><br>
+  <input type="number" id="jumlahBarang"><br>
+
+  <label>Masukkan Harga Barang:</label><br>
+  <input type="number" id="hargaBarang"><br>
+
+  <label>Apakah barangnya ada?</label><br>
+  <select id="ketersediaan">
+    <option value="ada">Ada</option>
+    <option value="kosong">Kosong</option>
+  </select><br>
+
+  <button onclick="tampilkanData()">Tampilkan</button>
+
+  <div id="hasil"></div>
+
+  <script>
+    function tampilkanData() {
+      const nama = document.getElementById("namaBarang").value;
+      const jumlah = document.getElementById("jumlahBarang").value;
+      const harga = document.getElementById("hargaBarang").value;
+      const status = document.getElementById("ketersediaan").value;
+
+      let ketersediaan = status === "ada" ? "true" : "false";
+
+      const hasil = `
+        <strong>Nama Barang:</strong> ${nama}<br>
+        <strong>Jumlah Barang:</strong> ${jumlah}<br>
+        <strong>Harga Barang:</strong> ${harga}<br>
+        <strong>Ketersediaan:</strong> ${ketersediaan}
+      `;
+
+      document.getElementById("hasil").innerHTML = hasil;
+    }
+  </script>
+
+</body>
+</html>
