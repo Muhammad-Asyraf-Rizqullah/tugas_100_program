@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isPrime(angka) {
+            if (angka > 1) {
+                for (let i = 2; i < angka; i++) {
+                    if (angka % i === 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            return false;
+        }
+        
+        console.log("=".repeat(20));
+        console.log("Cek Bilangan Prima");
+        console.log("=".repeat(20));
+        
+        const input = prompt("Inputkan angka: ");
+        const angka = parseInt(input);
+        
+        if (!isNaN(angka)) {
+            if (isPrime(angka)) {
+                console.log(`Angka ${angka} ialah bilangan prima.`);
+            } else {
+                console.log(`Angka ${angka} bukan bilangan prima.`);
+            }
+        } else {
+            console.log("Input tidak valid. Harap masukkan angka bulat.");
+        }
+    </script>
+</body>
+</html>

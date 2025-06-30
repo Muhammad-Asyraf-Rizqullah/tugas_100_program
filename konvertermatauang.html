@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Konverter Mata Uang</title>
+</head>
+<body>
+    <h1>Konverter Rupiah ke USD</h1>
+    <input type="number" id="rupiah" placeholder="Masukkan jumlah Rupiah">
+    <button onclick="convert()">Konversi</button>
+    <p>Hasil: <span id="result"></span> USD</p>
+
+    <script>
+        function convert() {
+            const rate = 0.00007; // Nilai tukar contoh
+            const rupiah = document.getElementById("rupiah").value;
+            const result = (rupiah * rate).toFixed(2);
+            document.getElementById("result").textContent = result;
+        }
+    </script>
+</body>
+</html>

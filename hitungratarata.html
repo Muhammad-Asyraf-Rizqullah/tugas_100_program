@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Rata-Rata Barang</title>
+</head>
+<body>
+    <h2>MENGHITUNG RATA-RATA BARANG</h2>
+    <label for="barang1">Masukkan harga barang 1:</label>
+    <input type="number" id="barang1"><br><br>
+
+    <label for="barang2">Masukkan harga barang 2:</label>
+    <input type="number" id="barang2"><br><br>
+
+    <label for="barang3">Masukkan harga barang 3:</label>
+    <input type="number" id="barang3"><br><br>
+
+    <button onclick="hitungRataRata()">Hitung</button>
+    <p id="hasil"></p>
+
+    <script>
+        function hitungRataRata() {
+            let barang1 = parseFloat(document.getElementById("barang1").value);
+            let barang2 = parseFloat(document.getElementById("barang2").value);
+            let barang3 = parseFloat(document.getElementById("barang3").value);
+            
+            let jumlah = barang1 + barang2 + barang3;
+            let hasilAkhir = jumlah / 20000;
+
+            document.getElementById("hasil").innerText = "Anda berhasil mendapatkan point = " + hasilAkhir;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lingkaran</title>
+</head>
+<body>
+  <label for="jari">Masukkan jari-jari: </label>
+  <input type="number" id="jari" />
+  <button id="hitung">Hitung</button>
+  
+  <p>Keliling: <span id="keliling"></span></p>
+  <p>Luas: <span id="luas"></span></p>
+  
+  <script>
+    const PHI = 3.14;
+    const jari = document.getElementById("jari");
+    const labelKeliling = document.getElementById("keliling");
+    const labelLuas = document.getElementById("luas");
+    const hitung = document.getElementById("hitung");
+
+    hitung.addEventListener("click", function() {
+      const r = parseInt(jari.value);
+
+      const keliling = 2 * PHI * r;
+      labelKeliling.textContent = keliling;
+
+      const luas = PHI * r * r;
+      labelLuas.textContent = luas;
+    });
+  </script>
+</body>
+</html>

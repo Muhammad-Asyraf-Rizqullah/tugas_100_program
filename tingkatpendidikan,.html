@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const usiaInput = prompt("Masukkan usia anda: ");
+        const usia = parseInt(usiaInput);
+            
+        if (usia < 5) {
+            console.log("Anda mungkin belum cukup umur untuk pendidikan formal.");
+        } else if (usia >= 5 && usia <= 6) {
+            console.log("Anda berada di usia Taman Kanak-Kanak (TK).");
+        } else if (usia >= 7 && usia <= 12) {
+            console.log("Anda berada di usia Sekolah Dasar (SD).");
+        } else if (usia >= 13 && usia <= 15) {
+            console.log("Anda berada di usia Sekolah Menengah Pertama (SMP).");
+        } else if (usia >= 16 && usia <= 18) {
+            console.log("Anda berada di usia Sekolah Menengah Atas (SMA).");
+        } else {
+            console.log("Anda mungkin berada di usia kuliah atau pendidikan lain.");
+        }
+    </script>
+</body>
+</html>
