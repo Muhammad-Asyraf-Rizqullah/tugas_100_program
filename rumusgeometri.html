@@ -1,0 +1,77 @@
+<!DOCTYPE html>Add commentMore actions
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Rumus Geometri</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f9f9ff;
+    }
+    h2 {
+      color: #2c3e50;
+    }
+    input, button {
+      margin: 8px 0;
+      padding: 8px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 300px;
+    }
+    #hasil {
+      margin-top: 20px;
+      background-color: #eef;
+      padding: 15px;
+      border-left: 4px solid #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📏 Rumus Geometri</h2>
+  <p>Hitung Luas Persegi, Lingkaran, dan Segitiga</p>
+
+  <label>Sisi Persegi:</label><br>
+  <input type="number" id="sisi" step="any"><br>
+
+  <label>Radius Lingkaran:</label><br>
+  <input type="number" id="radius" step="any"><br>
+
+  <label>Alas Segitiga:</label><br>
+  <input type="number" id="alas" step="any"><br>
+
+  <label>Tinggi Segitiga:</label><br>
+  <input type="number" id="tinggi" step="any"><br>
+
+  <button onclick="hitungLuas()">Hitung Semua Luas</button>
+
+  <div id="hasil"></div>
+
+  <script>
+    function hitungLuas() {
+      const sisi = parseFloat(document.getElementById("sisi").value);
+      const radius = parseFloat(document.getElementById("radius").value);
+      const alas = parseFloat(document.getElementById("alas").value);
+      const tinggi = parseFloat(document.getElementById("tinggi").value);
+      const hasil = document.getElementById("hasil");
+
+      if (isNaN(sisi) || isNaN(radius) || isNaN(alas) || isNaN(tinggi)) {
+        hasil.innerHTML = "Mohon isi semua nilai dengan benar.";
+        return;
+      }
+
+      const luasPersegi = sisi * sisi;
+      const luasLingkaran = 3.14 * radius ** 2;
+      const luasSegitiga = 0.5 * alas * tinggi;
+
+      hasil.innerHTML = `
+        ✅ Luas Persegi: <strong>${luasPersegi.toFixed(2)}</strong><br>
+        ✅ Luas Lingkaran: <strong>${luasLingkaran.toFixed(2)}</strong><br>
+        ✅ Luas Segitiga: <strong>${luasSegitiga.toFixed(2)}</strong>
+      `;
+    }
+  </script>
+
+</body>
+</html>Add comment

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Belanja 200K</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #fffaf0;
+    }
+    h2 {
+      color: #2e8b57;
+    }
+    input, button {
+      margin: 8px 5px;
+      padding: 8px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 300px;
+    }
+    #hasil {
+      margin-top: 20px;
+      background-color: #fff0f5;
+      padding: 15px;
+      border-left: 4px solid #c71585;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🛍️ Belanja 200K</h2>
+  <hr>
+
+  <label>Jumlah barang pertama (Rp40.000):</label><br>
+  <input type="number" id="barang1"><br>
+
+  <label>Jumlah barang kedua (Rp10.000):</label><br>
+  <input type="number" id="barang2"><br>
+
+  <label>Jumlah barang ketiga (Rp30.000):</label><br>
+  <input type="number" id="barang3"><br>
+
+  <label>Jumlah barang keempat (Rp70.000):</label><br>
+  <input type="number" id="barang4"><br>
+
+  <button onclick="hitungBelanja()">Hitung Total</button>
+  <button onclick="resetForm()">Reset</button>
+
+  <div id="hasil"></div>
+
+  <script>
+    function hitungBelanja() {
+      const b1 = parseInt(document.getElementById("barang1").value) || 0;
+      const b2 = parseInt(document.getElementById("barang2").value) || 0;
+      const b3 = parseInt(document.getElementById("barang3").value) || 0;
+      const b4 = parseInt(document.getElementById("barang4").value) || 0;
+
+      const harga1 = 40000;
+      const harga2 = 10000;
+      const harga3 = 30000;
+      const harga4 = 70000;
+
+      const total = (b1 * harga1) + (b2 * harga2) + (b3 * harga3) + (b4 * harga4);
+      const hasil = document.getElementById("hasil");
+
+      if (total >= 200000) {
+        const diskon = total * 0.075;
+        const bayar = total - diskon;
+        hasil.innerHTML = `
+          💸 Total belanja: <strong>Rp ${total.toLocaleString()}</strong><br>
+          🎉 Anda mendapat diskon 7.5%<br>
+          🧾 Total bayar setelah diskon: <strong>Rp ${bayar.toLocaleString()}</strong>
+        `;
+      } else {
+        hasil.innerHTML = `
+          💰 Total belanja: <strong>Rp ${total.toLocaleString()}</strong><br>
+          ❌ Belum memenuhi syarat diskon 7.5%
+        `;
+      }
+    }
+
+    function resetForm() {
+      document.getElementById("barang1").value = "";
+      document.getElementById("barang2").value = "";
+      document.getElementById("barang3").value = "";
+      document.getElementById("barang4").value = "";
+      document.getElementById("hasil").innerHTML = "";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Salto Sederhana</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: 20px auto;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #hasil {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Kalkulator Salto Sederhana</h2>
+        <label for="daftarSalto">Masukkan jumlah salto setiap murid, pisahkan dengan koma (misalnya: 2,3,1,4):</label>
+        <input type="text" id="daftarSalto">
+
+        <button onclick="hitungTotalSalto()">Hitung Total Salto</button>
+
+        <div id="hasil"></div>
+    </div>
+
+
+</body>
+<body>
+    <script>const hasilDiv = document.getElementById("hasil");
+
+function hitungTotalSalto() {
+    const daftarSaltoInput = document.getElementById("daftarSalto").value;
+    const daftarSaltoArray = daftarSaltoInput.split(',');
+    let totalSalto = 0;
+    let jumlahMurid = 0;
+
+    for (const salto of daftarSaltoArray) {
+        const jumlah = parseInt(salto.trim());
+        if (!isNaN(jumlah)) {
+            totalSalto += jumlah;
+            jumlahMurid++;
+        }
+    }
+
+    hasilDiv.textContent = `Total Salto dari ${jumlahMurid} murid: ${totalSalto}`;
+}</script>
+</body>
+</html>

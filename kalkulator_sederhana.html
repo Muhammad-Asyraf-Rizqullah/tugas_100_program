@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Kalkulator Sederhana</title>
+</head>
+<body>
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <button onclick="hitung()">Hitung</button>
+    <p id="hasil"></p>
+
+    <script>
+        function hitung() {
+            let a = parseFloat(document.getElementById("num1").value);
+            let b = parseFloat(document.getElementById("num2").value);
+            let operator = document.getElementById("operator").value;
+            let hasil;
+
+            switch (operator) {
+                case '+': hasil = a + b; break;
+                case '-': hasil = a - b; break;
+                case '*': hasil = a * b; break;
+                case '/': hasil = a / b; break;
+                default: hasil = "Operator tidak valid!";
+            }
+
+            document.getElementById("hasil").innerText = "Hasil: " + hasil;
+        }
+    </script>
+</body>
+</html>

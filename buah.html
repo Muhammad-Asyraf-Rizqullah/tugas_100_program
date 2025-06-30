@@ -1,0 +1,17 @@
+<input type="text" id="search" onkeyup="searchList()" placeholder="Cari...">
+<ul id="list">
+    <li>Apel</li>
+    <li>Pisang</li>
+    <li>Jeruk</li>
+    <li>Semangka</li>
+</ul>
+<body>
+    <script>function searchList() {
+    const searchText = document.getElementById("search").value.toLowerCase();
+    const items = document.querySelectorAll("#list li");
+
+    items.forEach(item => {
+        item.style.display = item.textContent.toLowerCase().includes(searchText) ? "block" : "none";
+    });
+}</script>
+</body>

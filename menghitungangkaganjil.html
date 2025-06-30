@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Menghitung Angka Ganjil</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f9fff0;
+    }
+    h2 {
+      color: #2e8b57;
+    }
+    input, button {
+      margin: 8px 5px;
+      padding: 8px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 300px;
+    }
+    #hasil {
+      margin-top: 20px;
+      background-color: #f0ffe0;
+      padding: 15px;
+      border-left: 4px solid #2e8b57;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🔢 PROGRAM MENGHITUNG ANGKA GANJIL</h2>
+  <hr>
+
+  <label>Masukkan angka batas akhir:</label><br>
+  <input type="number" id="angka" min="1"><br>
+
+  <button onclick="hitungGanjil()">Hitung Jumlah Ganjil</button>
+  <button onclick="resetForm()">Reset</button>
+
+  <div id="hasil"></div>
+
+  <script>
+    function hitungGanjil() {
+      const angka = parseInt(document.getElementById("angka").value);
+      const hasil = document.getElementById("hasil");
+
+      if (isNaN(angka) || angka < 1) {
+        hasil.innerHTML = "❗ Masukkan angka bulat positif yang valid.";
+        return;
+      }
+
+      let jumlah = 0;
+      let daftarGanjil = [];
+
+      for (let i = 1; i <= angka; i++) {
+        if (i % 2 !== 0) {
+          jumlah += i;
+          daftarGanjil.push(i);
+        }
+      }
+
+      hasil.innerHTML = `
+        🔍 Angka ganjil dari 1 hingga ${angka}: <strong>${daftarGanjil.join(", ")}</strong><br>
+        ➕ Jumlah total angka ganjil: <strong>${jumlah}</strong>
+      `;
+    }
+
+    function resetForm() {
+      document.getElementById("angka").value = "";
+      document.getElementById("hasil").innerHTML = "";
+    }
+  </script>
+
+</body>
+</html>

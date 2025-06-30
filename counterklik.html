@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Counter Klik</title>
+</head>
+<body>
+    <button id="tombol">Klik Saya</button>
+    <p id="counter">Diklik 0 kali</p>
+
+    <script>
+        let count = 0;
+        document.getElementById("tombol").addEventListener("click", () => {
+            count++;
+            document.getElementById("counter").innerText = "Diklik " + count + " kali";
+        });
+    </script>
+</body>
+</html>

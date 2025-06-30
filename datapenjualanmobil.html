@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Penjualan Mobil</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f0f8ff;
+    }
+    h2 {
+      color: #2e8b57;
+    }
+    input, button, textarea {
+      margin: 8px 5px;
+      padding: 8px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 400px;
+    }
+    #hasil {
+      margin-top: 20px;
+      background-color: #e0f7fa;
+      padding: 15px;
+      border-left: 4px solid #00796b;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🚗 PROGRAM MENGHITUNG DATA PENJUALAN MOBIL</h2>
+  <hr>
+
+  <label>Masukkan data penjualan (pisahkan dengan koma):</label><br>
+  <textarea id="dataPenjualan" rows="4" placeholder="Contoh: 10, 15, 8, 20, 12"></textarea><br>
+
+  <button onclick="hitungPenjualan()">Hitung</button>
+  <button onclick="resetForm()">Reset</button>
+
+  <div id="hasil"></div>
+
+  <script>
+    function hitungPenjualan() {
+      const input = document.getElementById("dataPenjualan").value;
+      const hasil = document.getElementById("hasil");
+
+      if (!input.trim()) {
+        hasil.innerHTML = "❗ Masukkan minimal satu data penjualan.";
+        return;
+      }
+
+      const data = input.split(",").map(x => parseInt(x.trim())).filter(x => !isNaN(x));
+
+      if (data.length === 0) {
+        hasil.innerHTML = "❗ Data tidak valid. Gunakan angka dan pisahkan dengan koma.";
+        return;
+      }
+
+      const total = data.reduce((a, b) => a + b, 0);
+      const terbanyak = Math.max(...data);
+      const terrendah = Math.min(...data);
+      const rataRata = total / data.length;
+
+      hasil.innerHTML = `
+        📊 Total penjualan: <strong>${total}</strong><br>
+        🔼 Penjualan terbanyak: <strong>${terbanyak}</strong><br>
+        🔽 Penjualan terendah: <strong>${terrendah}</strong><br>
+        📈 Rata-rata penjualan: <strong>${rataRata.toFixed(2)}</strong>
+      `;
+    }
+
+    function resetForm() {
+      document.getElementById("dataPenjualan").value = "";
+      document.getElementById("hasil").innerHTML = "";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const jamMulai = parseInt(prompt("Masukkan jam mulai: "));
+        const menitMulai = parseInt(prompt("Masukkan menit mulai: "));
+
+        const jamSelesai = parseInt(prompt("Masukkan jam selesai: "));
+        const menitSelesai = parseInt(prompt("Masukkan menit selesai: "));
+
+        const totalMenitMulai = jamMulai * 60 + menitMulai;
+        const totalMenitSelesai = jamSelesai * 60 + menitSelesai;
+
+        let selisihMenit = totalMenitSelesai - totalMenitMulai;
+
+        if (selisihMenit < 0) {
+            selisihMenit += 24 * 60;
+        }
+
+        const selisihJam = Math.floor(selisihMenit / 60);
+        const sisaMenit = selisihMenit % 60;
+
+        console.log(`Selisih waktu adalah ${selisihJam} jam ${sisaMenit} menit.`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const golongan = parseInt(prompt("Golongan: "));
+        let pemakaianKwh = parseInt(prompt("Pemakaian: "));
+
+        let tarif;
+
+        if (golongan === 1) {
+            tarif = 1000;
+        } else if (golongan === 2) {
+            tarif = 2000;
+        }
+
+        if (pemakaianKwh < 100) {
+            pemakaianKwh = 100;
+        }
+
+        let totalTagihan = pemakaianKwh * tarif;
+
+        if (pemakaianKwh >= 1000) {
+            totalTagihan += totalTagihan * 0.10;
+        }
+
+        console.log(`Bayar: ${totalTagihan}`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penghitung Siswa Kelas 7</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #hasilTotalSiswa {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Total Siswa Kelas 7</h1>
+    <p>Program ini akan menghitung total siswa Kelas 7, dengan asumsi ada 15 kelas dan setiap kelas memiliki 20 siswa.</p>
+    
+    <button onclick="hitungTotalSiswaKelas7()">Hitung Total Siswa Kelas 7</button>
+    
+    <div id="hasilTotalSiswa"></div>
+
+    
+</body>
+<body>
+    <script>// Data yang diketahui
+const jumlahKelasKelas7 = 15;
+const siswaPerKelasKelas7 = 20;
+
+// Fungsi untuk menghitung total siswa Kelas 7
+function hitungTotalSiswaKelas7() {
+    // Melakukan perhitungan
+    const totalSiswaKelas7 = jumlahKelasKelas7 * siswaPerKelasKelas7;
+
+    // Menampilkan hasil di elemen HTML
+    const hasilElement = document.getElementById('hasilTotalSiswa');
+    hasilElement.textContent = `Total seluruh siswa Kelas 7 adalah: ${totalSiswaKelas7} orang.`;
+}</script>
+</body>
+</html>

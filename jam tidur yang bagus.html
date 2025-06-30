@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Menentukan Jam Tidur Ideal</title>
+</head>
+<body>
+    <h2>PROGRAM MENENTUKAN JAM TIDUR IDEAL</h2>
+    <label for="jamTidur">Masukkan jam tidur Anda:</label>
+    <input type="number" id="jamTidur"><br><br>
+    <button onclick="cekJamTidur()">Cek</button>
+    <p id="hasil"></p>
+
+    <script>
+        function cekJamTidur() {
+            let jamTidur = parseInt(document.getElementById("jamTidur").value);
+            let hasil = "";
+
+            if (jamTidur >= 1 && jamTidur <= 3) {
+                hasil = "Jaga pola tidurnya yaa sayangg! 💤\nJam tidurmu berdampak buruk:\n1. Kelelahan ekstrem.\n2. Gangguan kognitif.\n3. Risiko kesehatan mental.\n4. Penyakit fisik.\n5. Potensi kecelakaan.";
+            } else if (jamTidur === 4) {
+                hasil = "Jaga pola tidurnya yaa sayangg! 💤\nJam tidurmu berdampak buruk:\n1. Kelelahan.\n2. Penurunan kinerja.\n3. Mood buruk.\n4. Kesulitan beradaptasi.\n5. Gangguan fisiologis.";
+            } else if (jamTidur === 5 || jamTidur === 6) {
+                hasil = "Jaga pola tidurnya yaa sayangg! 💤\nJam tidurmu berdampak buruk:\n1. Kelelahan ringan.\n2. Risiko penyakit jantung.\n3. Konsentrasi menurun.\n4. Performa menurun.\n5. Stres meningkat.";
+            } else if (jamTidur === 7 || jamTidur === 8) {
+                hasil = "Pola tidur kamu sudah bagus, sayangg! 😍\nJam tidurmu berdampak baik:\n1. Pemulihan yang baik.\n2. Kesehatan mental stabil.\n3. Peningkatan kinerja kognitif.\n4. Kesehatan jantung baik.\n5. Regulasi hormon.";
+            } else if (jamTidur === 9 || jamTidur === 10) {
+                hasil = "Pola tidur kamu lumayan bagus! 😊\nJam tidurmu lumayan baik:\n\n**Manfaat:**\n1. Pemulihan ekstra.\n2. Peningkatan kreativitas.\n3. Fokus yang tajam.\n\n**Dampak buruk:**\n1. Kepala sakit.\n2. Kesulitan bangun.\n3. Risiko penyakit tertentu.";
+            } else {
+                hasil = "Kamu tidurnya berlebihan, sayangg! 😴";
+            }
+
+            document.getElementById("hasil").innerText = hasil;
+        }
+    </script>
+</body>
+</html>

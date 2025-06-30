@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubah Warna Latar</title>
+</head>
+<body>
+    <h2>Klik tombol untuk mengubah warna latar!</h2>
+    <button id="colorButton">Ubah Warna</button>
+
+    
+</body>
+<body>
+    <script>document.getElementById("colorButton").addEventListener("click", function() {
+    const colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink", "cyan"];
+    document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+});</script>
+</body>
+</html>

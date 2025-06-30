@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const USERNAME = 'keanualvino7@gmail.com';
+        const PASSWORD = '0811';
+            
+        const username = prompt("Masukan Username: ");
+        const password = prompt("Masukan Password: ");
+        
+        if (username !== USERNAME) {
+            console.log("Username Tidak Tersedia.");
+        } else if (username === USERNAME && password !== PASSWORD) {
+            console.log("Password Salah!");
+        } else {
+            console.log(`Selamat datang ${username}`);
+        }
+    </script>
+</body>
+</html>

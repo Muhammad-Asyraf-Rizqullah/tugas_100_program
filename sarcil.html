@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Bilangan Terbesar & Terkecil</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f0f8ff;
+    }
+    h2 {
+      color: #2c3e50;
+    }
+    input, button {
+      margin: 8px 0;
+      padding: 8px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 300px;
+    }
+    #hasil {
+      margin-top: 20px;
+      background-color: #e0f7fa;
+      padding: 15px;
+      border-left: 4px solid #00796b;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🔍 Mencari Bilangan Terbesar dan Terkecil</h2>
+
+  <label>Bilangan 1:</label><br>
+  <input type="number" id="bil1"><br>
+
+  <label>Bilangan 2:</label><br>
+  <input type="number" id="bil2"><br>
+
+  <label>Bilangan 3:</label><br>
+  <input type="number" id="bil3"><br>
+
+  <button onclick="cariNilai()">Cari</button>
+
+  <div id="hasil"></div>
+
+  <script>
+    function cariNilai() {
+      const x = parseFloat(document.getElementById("bil1").value);
+      const y = parseFloat(document.getElementById("bil2").value);
+      const z = parseFloat(document.getElementById("bil3").value);
+      const hasil = document.getElementById("hasil");
+
+      if (isNaN(x) || isNaN(y) || isNaN(z)) {
+        hasil.innerHTML = "Mohon masukkan ketiga bilangan dengan benar.";
+        return;
+      }
+
+      const terbesar = Math.max(x, y, z);
+      const terkecil = Math.min(x, y, z);
+
+      hasil.innerHTML = `
+        ✅ Bilangan terbesar adalah <strong>${terbesar}</strong><br>
+        ✅ Bilangan terkecil adalah <strong>${terkecil}</strong>
+      `;
+    }
+  </script>
+
+</body>
+</html>

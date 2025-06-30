@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penghitung Jumlah Siswa SMA</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="container">
+        <h1>Penghitung Jumlah Siswa SMA</h1>
+        <p>Masukkan jumlah siswa per kelas di bawah ini:</p>
+
+        <div>
+            <label for="kelas10">Jumlah Siswa Kelas 10:</label>
+            <input type="number" id="kelas10" value="0" min="0">
+        </div>
+        <div>
+            <label for="kelas11">Jumlah Siswa Kelas 11:</label>
+            <input type="number" id="kelas11" value="0" min="0">
+        </div>
+        <div>
+            <label for="kelas12">Jumlah Siswa Kelas 12:</label>
+            <input type="number" id="kelas12" value="0" min="0">
+        </div>
+
+        <button id="hitungButton">Hitung Total Siswa</button>
+
+        <div id="hasilTotal">
+            Total Siswa Keseluruhan: 0
+        </div>
+    </div>
+<body>
+    <script>// Fungsi untuk menghitung total siswa
+function hitungTotalSiswa() {
+    // Mengambil nilai dari input
+    // Menggunakan parseInt untuk memastikan nilai yang diambil adalah angka
+    const siswaKelas10 = parseInt(document.getElementById('kelas10').value);
+    const siswaKelas11 = parseInt(document.getElementById('kelas11').value);
+    const siswaKelas12 = parseInt(document.getElementById('kelas12').value);
+
+    // Menjumlahkan seluruh siswa
+    const totalSiswa = siswaKelas10 + siswaKelas11 + siswaKelas12;
+
+    // Menampilkan hasil ke elemen dengan id 'hasilTotal'
+    document.getElementById('hasilTotal').innerText = `Total Siswa Keseluruhan: ${totalSiswa}`;
+}
+
+// Menambahkan event listener ke tombol setelah DOM siap
+document.addEventListener('DOMContentLoaded', () => {
+    // Mengambil referensi tombol
+    const tombolHitung = document.getElementById('hitungButton');
+
+    // Menambahkan event listener 'click' ke tombol
+    tombolHitung.addEventListener('click', hitungTotalSiswa);
+});</script>
+</body>
+
+</html>

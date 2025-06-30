@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Komisi Salesman</title>
+</head>
+<body>
+    <h2>Program Komisi Salesman</h2>
+    <label for="penjualan">Masukkan Total Penjualan:</label>
+    <input type="number" id="penjualan"><br><br>
+    <button onclick="hitungKomisi()">Hitung Komisi</button>
+    <p id="hasil"></p>
+
+    <script>
+        function hitungKomisi() {
+            let penjualan = parseFloat(document.getElementById("penjualan").value);
+            let komisi = 0;
+
+            if (penjualan > 100000) {
+                komisi = penjualan * 0.1;
+            } else {
+                komisi = penjualan * 0.05;
+            }
+
+            document.getElementById("hasil").innerText = `Komisi Salesman: ${komisi.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

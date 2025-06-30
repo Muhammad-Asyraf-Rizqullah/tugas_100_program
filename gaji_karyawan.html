@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const gajiPerJam = 10000;
+        let totalGajiPerusahaan = 0;
+
+        const n = parseInt(prompt("Jumlah karyawan: "));
+
+        for (let i = 0; i < n; i++) {
+            console.log(`Karyawan ${i + 1}`);
+            const jamKerja = parseInt(prompt("Jam kerja karyawan: "));
+        
+            let totalGaji;
+        
+            if (jamKerja > 7) {
+                const jamLembur = jamKerja - 7;
+                const gajiReguler = 7 * gajiPerJam;
+                const gajiLembur = jamLembur * gajiPerJam * 1.5;
+                totalGaji = gajiReguler + gajiLembur;
+            } else {
+                totalGaji = jamKerja * gajiPerJam;
+            }
+        
+            totalGajiPerusahaan += totalGaji;
+            console.log(`Total gaji: ${totalGaji}`);
+        }
+
+        console.log(`Total gaji karyawan: ${totalGajiPerusahaan}`);
+    </script>
+</body>
+</html>

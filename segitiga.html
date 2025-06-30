@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Luas Segitiga</title></head>
+<body>
+  <input id="alas" type="number" placeholder="Alas">
+  <input id="tinggi" type="number" placeholder="Tinggi">
+  <button onclick="hitung()">Hitung</button>
+  <p id="hasil"></p>
+  
+</body>
+<body>
+  <script>function hitung() {
+    let alas = parseFloat(document.getElementById("alas").value);
+    let tinggi = parseFloat(document.getElementById("tinggi").value);
+    let luas = 0.5 * alas * tinggi;
+    document.getElementById("hasil").textContent = "Luas: " + luas;
+  }</script>
+</body>
+</html> 

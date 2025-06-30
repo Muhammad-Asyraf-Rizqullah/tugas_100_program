@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mencari Nilai Terbesar dan Terkecil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input {
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mencari Nilai Terbesar dan Terkecil</h1>
+    <input type="number" id="value1" placeholder="Masukkan nilai pertama">
+    <input type="number" id="value2" placeholder="Masukkan nilai kedua">
+    <input type="number" id="value3" placeholder="Masukkan nilai ketiga">
+    <button onclick="findValues()">Cari</button>
+
+    <p>Nilai Terbesar: <span id="maxValue"></span></p>
+    <p>Nilai Terkecil: <span id="minValue"></span></p>
+
+    <script src="carinilai.js"></script>
+</body>
+</html>

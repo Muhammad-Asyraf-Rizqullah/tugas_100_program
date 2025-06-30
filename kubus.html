@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hitung Kubus</title>
+<style>
+  body {
+    font-family: sans-serif;
+  }
+  .container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  label, input, button {
+    display: block;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Hitung Kubus</h2>
+    <label for="sisi">Sisi:</label>
+    <input type="number" id="sisi" placeholder="Masukkan panjang sisi">
+    <button onclick="hitungKubus()">Hitung</button>
+    <div id="hasil"></div>
+  </div>
+
+  <script>
+    function hitungKubus() {
+      const sisiInput = document.getElementById("sisi");
+      const hasilDiv = document.getElementById("hasil");
+
+      const sisi = parseFloat(sisiInput.value);
+
+      if (isNaN(sisi) || sisi <= 0) {
+        hasilDiv.textContent = "Masukkan angka positif yang valid untuk sisi kubus.";
+        return;
+      }
+
+      const luasPermukaan = 6 * sisi * sisi;
+      const volume = sisi * sisi * sisi;
+
+      hasilDiv.innerHTML = `
+        Luas Permukaan: ${luasPermukaan.toFixed(2)}<br>
+        Volume: ${volume.toFixed(2)}
+      `;
+    }
+  </script>
+</body>
+
+<body>
+  
+
+
+</body>
+<body>
+  <script>function hitungKubus() {
+    const sisiInput = document.getElementById("sisi");
+    const hasilDiv = document.getElementById("hasil");
+  
+    const sisi = parseFloat(sisiInput.value);
+  
+    if (isNaN(sisi) || sisi <= 0) {
+      hasilDiv.textContent = "Masukkan angka positif yang valid untuk sisi kubus.";
+      return;
+    }
+  
+    const luasPermukaan = 6 * sisi * sisi;
+    const volume = sisi * sisi * sisi;
+  
+    hasilDiv.innerHTML = `
+      Luas Permukaan: ${luasPermukaan.toFixed(2)}<br>
+      Volume: ${volume.toFixed(2)}
+    `;
+  }</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Stopwatch</title>
+
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        #display { font-size: 2em; margin: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Stopwatch</h1>
+    <div id="display">00:00:00</div>
+    <button onclick="startStop()">Mulai/Hentikan</button>
+    <button onclick="reset()">Reset</button>
+</body>
+<body>
+    <script>let timer;
+let isRunning = false;
+let seconds = 0, minutes = 0, hours = 0;
+
+function updateDisplay() {
+    let display = document.getElementById("display");
+    display.innerHTML = 
+        (hours < 10 ? "0" : "") + hours + ":" +
+        (minutes < 10 ? "0" : "") + minutes + ":" +
+        (seconds < 10 ? "0" : "") + seconds;
+}
+
+function startStop() {
+    if (isRunning) {
+        clearInterval(timer);
+    } else {
+        timer = setInterval(() => {
+            seconds++;
+            if (seconds === 60) { seconds = 0; minutes++; }
+            if (minutes === 60) { minutes = 0; hours++; }
+            updateDisplay();
+        }, 1000);
+    }
+    isRunning = !isRunning;
+}
+
+function reset() {
+    clearInterval(timer);
+    isRunning = false;
+    seconds = minutes = hours = 0;
+    updateDisplay();
+}</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penghitung Kata</title>
+</head>
+<body>
+    <h2>Penghitung Kata</h2>
+    <textarea id="textInput" placeholder="Ketik teks di sini..." oninput="countWords()"></textarea>
+    <p>Jumlah kata: <span id="wordCount">0</span></p>
+
+    
+</body>
+<body>
+    <script>function countWords() {
+    const text = document.getElementById("textInput").value.trim();
+    const words = text.split(/\s+/).filter(word => word.length > 0);
+    document.getElementById("wordCount").textContent = words.length;
+}</script>
+</body>
+</html> 

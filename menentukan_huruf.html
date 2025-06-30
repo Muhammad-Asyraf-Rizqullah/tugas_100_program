@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Menentukan Huruf</title>
+</head>
+<body>
+    <h2>PROGRAM MENENTUKAN HURUF</h2>
+    <label for="huruf">Masukkan huruf (A - Z):</label>
+    <input type="text" id="huruf" maxlength="1"><br><br>
+    <button onclick="cekHuruf()">Cek</button>
+    <p id="hasil"></p>
+
+    <script>
+        function cekHuruf() {
+            let huruf = document.getElementById("huruf").value.toLowerCase();
+            const vokal = ["a", "i", "u", "e", "o"];
+            const konsonan = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
+
+            if (vokal.includes(huruf)) {
+                document.getElementById("hasil").innerText = `${huruf} merupakan huruf vokal.`;
+            } else if (konsonan.includes(huruf)) {
+                document.getElementById("hasil").innerText = `${huruf} merupakan huruf konsonan.`;
+            } else {
+                document.getElementById("hasil").innerText = `${huruf} bukan huruf.`;
+            }
+        }
+    </script>
+</body>
+</html>

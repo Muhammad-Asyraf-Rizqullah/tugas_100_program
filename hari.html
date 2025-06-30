@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penentu Hari</title>
+</head>
+<body>
+    <h2>Penentu Hari</h2>
+    <input type="date" id="dateInput">
+    <button onclick="findDay()">Cek Hari</button>
+    <p>Hari: <span id="dayResult">-</span></p>
+
+  
+</body>
+<body>
+    <script>function findDay() {
+    const dateValue = document.getElementById("dateInput").value;
+    if (!dateValue) {
+        alert("Masukkan tanggal yang valid!");
+        return;
+    }
+
+    const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+    const date = new Date(dateValue);
+    document.getElementById("dayResult").textContent = days[date.getDay()];
+}</script>
+</body>
+</html>

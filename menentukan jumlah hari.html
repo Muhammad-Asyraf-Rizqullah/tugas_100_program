@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menentukan Jumlah Hari</title>
+</head>
+<body>
+    <h2>Menentukan Jumlah Hari</h2>
+    <label for="bulan">Masukkan bulan (1-12):</label>
+    <input type="number" id="bulan" min="1" max="12"><br><br>
+
+    <label for="tahun">Masukkan tahun:</label>
+    <input type="number" id="tahun"><br><br>
+
+    <button onclick="hitungHari()">Hitung</button>
+    <p id="hasil"></p>
+
+    <script>
+        function hitungHari() {
+            let bulan = parseInt(document.getElementById("bulan").value);
+            let tahun = parseInt(document.getElementById("tahun").value);
+            let jumlahHari;
+
+            if ([1, 3, 5, 7, 8, 10, 12].includes(bulan)) {
+                jumlahHari = 31;
+            } else if ([4, 6, 9, 11].includes(bulan)) {
+                jumlahHari = 30;
+            } else if (bulan === 2) {
+                jumlahHari = (tahun % 4 === 0 && (tahun % 100 !== 0 || tahun % 400 === 0)) ? 29 : 28;
+            } else {
+                document.getElementById("hasil").innerText = "Bulan tidak valid!";
+                return;
+            }
+
+            document.getElementById("hasil").innerText = `Jumlah hari dalam bulan ${bulan}, tahun ${tahun}: ${jumlahHari}`;
+        }
+    </script>
+</body>
+</html>

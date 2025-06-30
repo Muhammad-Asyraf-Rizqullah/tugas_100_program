@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jajar Genjang</title>
+</head>
+<body>
+    <div class="input">
+        <div>
+            <label for="jj">Inputkan Jari-jari: </label>
+            <input type="number" name="" id="jj">
+        </div>
+        <div>
+            <label for="gp">Inputkan Garis Pelukis: </label>
+            <input type="number" name="" id="gp">
+        </div>
+        <div>
+            <label for="t">Inputkan Tinggi: </label>
+            <input type="number" name="" id="t">
+        </div>
+    </div>
+    <div class="btn">
+        <button id="btnHitung" type="button">Hitung</button>
+    </div>
+    <div class="output">
+        <p>
+            Luas Permukaan: <span id="lp"></span>
+        </p>
+        <p>
+            Luas Selimut: <span id="ls"></span>
+        </p>
+        <p>
+            Volume: <span id="v"></span>
+        </p>
+    </div>
+    <script>
+        const jj = document.getElementById("jj")
+        const gp = document.getElementById("gp")
+        const t = document.getElementById("t")
+        const btnHitung = document.getElementById("btnHitung")
+        const lp = document.getElementById("lp")
+        const ls = document.getElementById("ls")
+        const v = document.getElementById("v")
+
+        btnHitung.addEventListener('click', function(){
+            const jmlhLp = 3.14 * parseFloat(jj.value) * (parseFloat(jj.value) + parseFloat(gp.value));
+            lp.innerHTML = jmlhLp
+
+            const jmlhLs = 3.14 * parseFloat(jj.value) * parseFloat(gp.value);
+            ls.innerHTML = jmlhLs
+
+            const jmlhV = 1 / 3 * 3.14 * parseFloat(jj.value) * parseFloat(jj.value) * parseFloat(t.value);
+            v.innerHTML = jmlhV
+        })
+    </script>
+</body>
+</html>

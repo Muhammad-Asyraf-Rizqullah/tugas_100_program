@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penghitung Jumlah Siswa SD</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Penghitung Jumlah Siswa SD</h1>
+        <p class="description">Masukkan jumlah siswa di setiap kelas untuk mendapatkan total keseluruhan.</p>
+
+        <div class="input-group">
+            <label for="kelas1">Jumlah Siswa Kelas 1:</label>
+            <input type="number" id="kelas1" value="0" min="0" placeholder="Contoh: 30">
+        </div>
+        <div class="input-group">
+            <label for="kelas2">Jumlah Siswa Kelas 2:</label>
+            <input type="number" id="kelas2" value="0" min="0" placeholder="Contoh: 28">
+        </div>
+        <div class="input-group">
+            <label for="kelas3">Jumlah Siswa Kelas 3:</label>
+            <input type="number" id="kelas3" value="0" min="0" placeholder="Contoh: 32">
+        </div>
+        <div class="input-group">
+            <label for="kelas4">Jumlah Siswa Kelas 4:</label>
+            <input type="number" id="kelas4" value="0" min="0" placeholder="Contoh: 29">
+        </div>
+        <div class="input-group">
+            <label for="kelas5">Jumlah Siswa Kelas 5:</label>
+            <input type="number" id="kelas5" value="0" min="0" placeholder="Contoh: 31">
+        </div>
+        <div class="input-group">
+            <label for="kelas6">Jumlah Siswa Kelas 6:</label>
+            <input type="number" id="kelas6" value="0" min="0" placeholder="Contoh: 27">
+        </div>
+
+        <button id="hitungButton">Hitung Total Siswa</button>
+
+        <div id="hasilTotal" class="result-box">
+            Total Siswa Keseluruhan: <span class="total-number">0</span>
+        </div>
+        <p id="errorMessage" class="error-message"></p>
+    </div>
+
+   
+</body>
+<body>
+    <script>// Fungsi untuk menghitung total siswa
+function hitungTotalSiswa() {
+    const inputIds = ['kelas1', 'kelas2', 'kelas3', 'kelas4', 'kelas5', 'kelas6'];
+    let totalSiswa = 0;
+    let hasError = false;
+    const errorMessageElement = document.getElementById('errorMessage');
+
+    errorMessageElement.textContent = ''; // Hapus pesan error sebelumnya
+
+    inputIds.forEach(id => {
+        const inputElement = document.getElementById(id);
+        let value = parseInt(inputElement.value);
+
+        // Validasi input: pastikan angka dan tidak negatif
+        if (isNaN(value) || value < 0) {
+            errorMessageElement.textContent = 'Pastikan semua input diisi dengan angka positif yang valid.';
+            inputElement.classList.add('input-error'); // Tambahkan kelas error untuk styling
+            hasError = true;
+        } else {
+            inputElement.classList.remove('input-error'); // Hapus kelas error jika valid
+            totalSiswa += value;
+        }
+    });
+
+    const totalNumberSpan = document.querySelector('#hasilTotal .total-number');
+    if (!hasError) {
+        totalNumberSpan.textContent = totalSiswa;
+        document.getElementById('hasilTotal').classList.add('show-result'); // Tampilkan kotak hasil dengan animasi
+    } else {
+        totalNumberSpan.textContent = '0';
+        document.getElementById('hasilTotal').classList.remove('show-result'); // Sembunyikan/reset kotak hasil
+    }
+}
+
+// Menambahkan event listener ke tombol setelah DOM siap
+document.addEventListener('DOMContentLoaded', () => {
+    const tombolHitung = document.getElementById('hitungButton');
+    tombolHitung.addEventListener('click', hitungTotalSiswa);
+
+    // Menambahkan event listener untuk input agar error hilang saat diketik ulang
+    const inputElements = document.querySelectorAll('.input-group input[type="number"]');
+    inputElements.forEach(input => {
+        input.addEventListener('input', () => {
+            input.classList.remove('input-error');
+            // Jika semua input sudah valid, hapus pesan error
+            const allInputsValid = Array.from(inputElements).every(input => {
+                const val = parseInt(input.value);
+                return !isNaN(val) && val >= 0;
+            });
+            if (allInputsValid) {
+                document.getElementById('errorMessage').textContent = '';
+            }
+        });
+    });
+});</script>
+</body>
+</html>

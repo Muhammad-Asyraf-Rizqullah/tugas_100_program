@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balok</title>
+</head>
+<body>
+    <div class="input">
+        <div>
+            <label for="panjang">Inputkan Panjang: </label>
+            <input type="number" name="" id="panjang">
+        </div>
+        <div>
+            <label for="lebar">Inputkan Lebar: </label>
+            <input type="number" name="" id="lebar">
+        </div>
+        <div>
+            <label for="tinggi">Inputkan Tinggi: </label>
+            <input type="number" name="" id="tinggi">
+        </div>
+    </div>
+    <div class="btn">
+        <button id="btnHitung" type="button">Hitung</button>
+    </div>
+    <div class="output">
+        <p>
+            Luas Permukaan: <span id="lp"></span>
+        </p>
+        <p>
+            Volume: <span id="v"></span>
+        </p>
+        <p>
+            Keliling: <span id="k"></span>
+        </p>
+        <script>
+            const panjang = document.getElementById("panjang")
+            const lebar = document.getElementById("lebar")
+            const tinggi = document.getElementById("tinggi")
+            const btnHitung = document.getElementById("btnHitung")
+            const lp = document.getElementById("lp")
+            const v = document.getElementById("v")
+            const k = document.getElementById("k")
+
+            btnHitung.addEventListener('click', function(){
+                const jmlhLp = 2 * (parseFloat(panjang.value) * parseFloat(lebar.value) + parseFloat(panjang.value) * parseFloat(tinggi.value) + parseFloat(lebar.value) * parseFloat(tinggi.value));
+                lp.innerHTML = jmlhLp
+
+                const jmlhV = parseFloat(panjang.value) * parseFloat(lebar.value) * parseFloat(tinggi.value);
+                v.innerHTML = jmlhV
+
+                const jmlhK = 4 * (parseFloat(panjang.value) + parseFloat(lebar.value) + parseFloat(tinggi.value));
+                k.innerHTML = jmlhK
+            })
+        </script>
+    </div>
+</body>
+</html>

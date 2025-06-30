@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarak Perjalanan Semut</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            font-size: 16px;
+            padding: 10px;
+            margin: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>JARAK SEMUT</h2>
+    <label for="jarak">Masukkan jarak perjalanan semut (dalam cm):</label>
+    <input type="number" id="jarak"><br><br>
+    <button onclick="hitungJarak()">Hitung</button>
+    <p id="hasil"></p>
+
+    <script>
+        function hitungJarak() {
+            const KILOMETER = 100000;
+            const METER = 100;
+
+            let cm = parseInt(document.getElementById("jarak").value);
+            let km = Math.floor(cm / KILOMETER);
+            cm = cm % KILOMETER;
+            let m = Math.floor(cm / METER);
+            cm = cm % METER;
+
+            document.getElementById("hasil").innerText = `Semut telah berjalan sejauh: ${km}km ${m}m ${cm}cm`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const usiaInput = prompt("Usia anda: ");
+        const usia = parseInt(usiaInput);
+        const bbInput = prompt("Berat badan anda: ");
+        const bb = parseInt(bbInput);
+        const kondisi = prompt("Kondisi anda (Sehat/Tidak): ");
+            
+        if (!isNaN(usia) && !isNaN(bb)) {
+            if (usia >= 18 && usia <= 60 && bb >= 50 && kondisi.toLowerCase() === "sehat") {
+                console.log(`Usia: ${usia}\nBerat badan: ${bb}\nKondisi: ${kondisi}\nAnda layak menjadi pendonor darah.`);
+            } else {
+                console.log(`Usia: ${usia}\nBerat badan: ${bb}\nKondisi: ${kondisi}\nAnda belum layak menjadi pendonor darah.`);
+            }
+        } else {
+            console.log("Input tidak valid. Harap masukkan angka yang benar.");
+        }
+    </script>
+</body>
+</html>
