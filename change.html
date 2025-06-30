@@ -9,6 +9,12 @@
     <h2>Klik tombol untuk mengubah warna latar!</h2>
     <button id="colorButton">Ubah Warna</button>
 
-    <script src="change.js"></script>
+    
+</body>
+<body>
+    <script>document.getElementById("colorButton").addEventListener("click", function() {
+    const colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink", "cyan"];
+    document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+});</script>
 </body>
 </html>

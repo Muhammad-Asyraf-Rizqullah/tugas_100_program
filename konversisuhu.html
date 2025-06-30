@@ -5,10 +5,14 @@
   <input id="c" type="number" placeholder="Celsius">
   <button onclick="konversi()">Konversi</button>
   <p id="hasil"></p>
-  <script src="konversiSuhu.js"></script>
+  
 </body>
 <body>
-    
-    <script>src="konversisuhu.js"</script>
+    <script>function konversi() {
+    let c = parseFloat(document.getElementById("c").value);
+    let f = (c * 9/5) + 32;
+    document.getElementById("hasil").textContent = "Fahrenheit: " + f;
+  }</script>
+   
 </body>
 </html>

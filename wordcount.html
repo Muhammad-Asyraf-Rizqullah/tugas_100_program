@@ -10,6 +10,13 @@
     <textarea id="textInput" placeholder="Ketik teks di sini..." oninput="countWords()"></textarea>
     <p>Jumlah kata: <span id="wordCount">0</span></p>
 
-    <script src="wordcount.js"></script>
+    
+</body>
+<body>
+    <script>function countWords() {
+    const text = document.getElementById("textInput").value.trim();
+    const words = text.split(/\s+/).filter(word => word.length > 0);
+    document.getElementById("wordCount").textContent = words.length;
+}</script>
 </body>
 </html> 

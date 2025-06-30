@@ -6,6 +6,14 @@
   <input id="tinggi" type="number" placeholder="Tinggi">
   <button onclick="hitung()">Hitung</button>
   <p id="hasil"></p>
-  <script src="segitiga.js"></script>
+  
+</body>
+<body>
+  <script>function hitung() {
+    let alas = parseFloat(document.getElementById("alas").value);
+    let tinggi = parseFloat(document.getElementById("tinggi").value);
+    let luas = 0.5 * alas * tinggi;
+    document.getElementById("hasil").textContent = "Luas: " + luas;
+  }</script>
 </body>
 </html> 
