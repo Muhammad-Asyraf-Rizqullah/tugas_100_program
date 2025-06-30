@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Menentukan Hari Selanjutnya</title>
+</head>
+<body>
+    <h2>PROGRAM MENENTUKAN HARI SELANJUTNYA</h2>
+    <label for="hariPertama">Masukkan hari pertama:</label>
+    <select id="hariPertama">
+        <option value="senin">Senin</option>
+        <option value="selasa">Selasa</option>
+        <option value="rabu">Rabu</option>
+        <option value="kamis">Kamis</option>
+        <option value="jumat">Jumat</option>
+        <option value="sabtu">Sabtu</option>
+        <option value="minggu">Minggu</option>
+    </select><br><br>
+
+    <label for="jumlah">Berapa hari setelahnya?</label>
+    <input type="number" id="jumlah"><br><br>
+
+    <button onclick="hitungHari()">Hitung</button>
+    <p id="hasil"></p>
+
+    <script>
+        function hitungHari() {
+            const daftarHari = ["senin", "selasa", "rabu", "kamis", "jumat", "sabtu", "minggu"];
+            let hariPertama = document.getElementById("hariPertama").value;
+            let jumlah = parseInt(document.getElementById("jumlah").value);
+
+            if (isNaN(jumlah) || jumlah < 0) {
+                document.getElementById("hasil").innerText = "Inputan tidak valid!";
+                return;
+            }
+
+            let indexHariPertama = daftarHari.indexOf(hariPertama);
+            let indexHariSetelah = (indexHariPertama + (jumlah % 7)) % 7;
+            let hariSetelah = daftarHari[indexHariSetelah];
+
+            document.getElementById("hasil").innerText = `${jumlah} hari setelah hari ${hariPertama} adalah ${hariSetelah}.`;
+        }
+    </script>
+</body>
+</html>

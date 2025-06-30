@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const bulanSaatIni = parseInt(prompt("Bulan saat ini: "));
+        const bulanKedepan = parseInt(prompt("Bulan kedepan: "));
+
+        const totalBulan = bulanSaatIni + bulanKedepan;
+        let bulanPernikahan = totalBulan % 12;
+
+        if (bulanPernikahan === 0) {
+            bulanPernikahan = 12;
+        }
+
+        console.log(`Bulan pernikahan: ${bulanPernikahan}`);
+    </script>
+</body>
+</html>

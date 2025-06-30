@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bola</title>
+</head>
+<body>
+    <div class="input">
+        <label for="jari">Inputkan Jari: </label>
+        <input type="number" name="" id="jari">
+    </div>
+    <div class="btn">
+        <button id="btnHitung" type="button">Hitung</button>
+    </div>
+    <div class="output">
+        <p>
+            Luas: <span id="luas"></span>
+        </p>
+        <p>
+            Volume: <span id="v"></span>
+        </p>
+    </div>
+    <script>
+        const jari = document.getElementById("jari")
+        const btnHitung = document.getElementById("btnHitung")
+        const luas = document.getElementById("luas")
+        const volume = document.getElementById("v")
+
+        btnHitung.addEventListener('click', function(){
+            const jmlhLuas = 4 * 3.14 * parseFloat(jari.value) * parseFloat(jari.value);
+            luas.innerHTML = jmlhLuas
+
+            const jmlhV = 4 / 3 * 3.14 * parseFloat(jari.value) * parseFloat(jari.value) * parseFloat(jari.value);
+            volume.innerHTML = jmlhV
+        })
+    </script>
+</body>
+</html>

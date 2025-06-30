@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Validasi Email</title>
+</head>
+<body>
+    <input type="text" id="email" placeholder="Masukkan email">
+    <button onclick="cekEmail()">Validasi</button>
+    <p id="hasil"></p>
+
+    <script>
+        function cekEmail() {
+            let email = document.getElementById("email").value;
+            let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let valid = regex.test(email);
+            document.getElementById("hasil").innerText = valid ? "Email valid!" : "Email tidak valid!";
+        }
+    </script>
+</body>
+</html>

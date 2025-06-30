@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Menampilkan Bulan</title>
+</head>
+<body>
+    <h2>PROGRAM MENAMPILKAN BULAN</h2>
+    <label for="tahun">Masukkan tahun (angka):</label>
+    <input type="number" id="tahun"><br><br>
+
+    <label for="bulan">Masukkan bulan (angka):</label>
+    <input type="number" id="bulan"><br><br>
+
+    <button onclick="tampilkanBulan()">Tampilkan</button>
+    <pre id="hasil"></pre>
+
+    <script>
+        function tampilkanBulan() {
+            let tahun = parseInt(document.getElementById("tahun").value);
+            let bulan = parseInt(document.getElementById("bulan").value);
+            
+            if (isNaN(tahun) || isNaN(bulan) || bulan < 1 || bulan > 12) {
+                document.getElementById("hasil").innerText = "Inputan tidak valid! Harap masukkan angka yang benar.";
+                return;
+            }
+
+            let namaBulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli",
+                             "Agustus", "September", "Oktober", "November", "Desember"];
+            let jumlahHari = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+            // Menentukan tahun kabisat
+            if ((tahun % 4 === 0 && tahun % 100 !== 0) || (tahun % 400 === 0)) {
+                jumlahHari[1] = 29;
+            }
+
+            let kalender = `Bulan ${namaBulan[bulan - 1]} ${tahun}\n`;
+            kalender += "=======================\n";
+            kalender += "Sen Sel Rab Kam Jum Sab Min\n";
+
+            let hariAwal = new Date(tahun, bulan - 1, 1).getDay(); // Dapatkan hari pertama bulan
+            let kalenderBaris = "";
+
+            for (let i = 0; i < hariAwal; i++) {
+                kalenderBaris += "    ";
+            }
+
+            for (let hari = 1; hari <= jumlahHari[bulan - 1]; hari++) {
+                kalenderBaris += hari.toString().padStart(3, " ") + " ";
+                if ((hariAwal + hari) % 7 === 0) {
+                    kalenderBaris += "\n";
+                }
+            }
+
+            document.getElementById("hasil").innerText = kalender + "\n" + kalenderBaris;
+        }
+    </script>
+</body>
+</html>
